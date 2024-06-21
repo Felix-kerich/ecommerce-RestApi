@@ -1,8 +1,5 @@
-package com.App.ecommerce.controller;
+package com.App.ecommerce.Payments;
 
-
-import com.App.ecommerce.Service.MpesaService;
-import com.App.ecommerce.models.Payment;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -17,7 +14,7 @@ public class MpesaController {
     private MpesaService mpesaService;
 
     @PostMapping("/stkpush")
-    public String initiateStkPush(@RequestBody Payment payment) {
+    public String initiateStkPush(@RequestBody PaymentModel payment) {
         try {
             return mpesaService.performStkPush(payment.getPhoneNumber(), payment.getUsername(), payment.getAmount());
         } catch (IOException e) {

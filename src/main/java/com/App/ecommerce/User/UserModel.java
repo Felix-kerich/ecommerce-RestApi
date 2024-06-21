@@ -1,4 +1,4 @@
-package com.App.ecommerce.models;
+package com.App.ecommerce.User;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -8,29 +8,29 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name="users")
-public class User {
+public class UserModel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String firstName;
     private String lastName;
-    private String userName; 
-    private String password;
+    private String userName;     
     private String email;
+    private String password;
 
-    public User() {
+    public UserModel() {
     }
     
 
 
-    public User(Long id, String firstName, String lastName, String userName, String password, String email) {
+    public UserModel(Long id, String firstName, String lastName, String userName, String email, String password) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
-        this.userName = userName;
-        this.password = password;
+        this.userName = userName;        
         this.email = email;
+        this.password = password;
     }
 
     public Long getId() {

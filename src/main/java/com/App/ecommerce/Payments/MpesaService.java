@@ -1,11 +1,9 @@
 
-package com.App.ecommerce.Service;
+package com.App.ecommerce.Payments;
 
 import okhttp3.*;
 import org.springframework.stereotype.Service;
 
-import com.App.ecommerce.Repository.PaymentRepo;
-import com.App.ecommerce.models.Payment;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 
@@ -89,7 +87,7 @@ public class MpesaService {
         this.paymentRepo = paymentRepo;
     } 
 
-    public String SaveMpesaDetails(Payment payment){
+    public String SaveMpesaDetails(PaymentModel payment){
         paymentRepo.save(payment);
         return "Details Saved Successfully";
     }

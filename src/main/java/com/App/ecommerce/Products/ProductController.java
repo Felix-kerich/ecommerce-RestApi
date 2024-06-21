@@ -1,4 +1,4 @@
-package com.App.ecommerce.controller;
+package com.App.ecommerce.Products;
 
 import java.util.List;
 
@@ -10,9 +10,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.App.ecommerce.Service.ProductService;
-import com.App.ecommerce.models.Product;
-
 @RestController
 @RequestMapping("/products")
 public class ProductController {
@@ -22,16 +19,16 @@ public class ProductController {
     }
 
     @PostMapping("/save")
-    public String saveProduct(@RequestBody Product product){
-        productService.saveProduct(product);
-        return "product saved successfully";
+    public String saveProduct(@RequestBody ProductDTO productDTO){
+        productService.saveProduct(productDTO);
+        return "saved successdully";
     }
     @GetMapping("/")
-    public List<Product> getAllProducts(){
+    public List<ProductDTO> getAllProducts(){
         return productService.findAllProducts();
     }
     @GetMapping("/{id}")
-    public Product getProductById(@PathVariable Long id){
+    public ProductDTO getProductById(@PathVariable Long id){
         return productService.getProductById(id);
     }
     @DeleteMapping("/deleteAll")

@@ -1,4 +1,4 @@
-package com.App.ecommerce.controller;
+package com.App.ecommerce.Assistance;
 
 import java.util.List;
 
@@ -9,9 +9,6 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import com.App.ecommerce.Service.AssistanceService;
-import com.App.ecommerce.models.AssistanceModel;
 
 @RestController
 @RequestMapping("/assistance")
@@ -24,23 +21,23 @@ public class AssistanceController {
     
 
     @PostMapping("/ask")
-    public String AskForAssistance(@RequestBody AssistanceModel assistanceModel){
-        assistanceService.AskForAssistance(assistanceModel);
+    public String AskForAssistance(@RequestBody AssistanceDTO assistanceDTO){
+        assistanceService.AskForAssistance(assistanceDTO);
         return "sent successfully";
     }
   
         
 
     @GetMapping("/")
-    public List<AssistanceModel> viewAllAskedAssistance(){
+    public List<AssistanceDTO> viewAllAskedAssistance(){
         return assistanceService.viewAllAskedAssistance();
          
         
     } 
     
     @PutMapping("/update")
-    public String updateAskedAssistance(@RequestBody AssistanceModel assistanceModel){
-        assistanceService.updateAskedAssistance(assistanceModel);
+    public String updateAskedAssistance(@RequestBody AssistanceDTO assistanceDTO){
+        assistanceService.updateAskedAssistance(assistanceDTO);
         return "updated successfully";
 
     }

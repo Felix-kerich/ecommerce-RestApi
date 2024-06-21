@@ -1,18 +1,27 @@
-package com.App.ecommerce.DTO;
+package com.App.ecommerce.Assistance;
 
-public class Assistance {
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
+@Entity
+@Table(name = "Assistance")
+public class AssistanceModel {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String username;
     private String Problem;
     private String ProblemDescription;
 
 
-    public Assistance() {
+    public AssistanceModel() {
     }
 
 
-    public Assistance(Long id, String username, String Problem, String ProblemDescription) {
+    public AssistanceModel(Long id, String username, String Problem, String ProblemDescription) {
         this.id = id;
         this.username = username;
         this.Problem = Problem;
@@ -53,4 +62,5 @@ public class Assistance {
     public void setProblemDescription(String ProblemDescription) {
         this.ProblemDescription = ProblemDescription;
     }
+
 }

@@ -1,4 +1,4 @@
-package com.App.ecommerce.models;
+package com.App.ecommerce.Admin;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -8,21 +8,20 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "employee_data")
-public class Admin {
+public class AdminModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    
+    private Long id;    
     private String name;
     private String email;
     private String password;
 
-    public Admin() {
+    public AdminModel() {
     }
 
    
 
-    public Admin(Long id, String name, String email, String password) {
+    public AdminModel(Long id, String name, String email, String password) {
         this.id = id;
         this.name = name;
         this.email = email;

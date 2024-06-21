@@ -1,4 +1,4 @@
-package com.App.ecommerce.controller;
+package com.App.ecommerce.Admin;
 
 import java.util.List;
 
@@ -8,8 +8,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.App.ecommerce.Service.AdminService;
-import com.App.ecommerce.models.Admin;
 
 @RestController
 @RequestMapping("/admin")
@@ -20,13 +18,13 @@ public class AdminController {
     }
 
     @PostMapping("/create-admin")
-        public String saveEmployee(@RequestBody Admin admin){
-            adminService.saveAdminDetails(admin);
+        public String saveEmployee(@RequestBody AdminDTO adminDTO){
+            adminService.saveAdminDetails(adminDTO);
             return "Admin created";
 
         }
     @GetMapping("/")
-    public List<Admin> getAllEmployees(){
+    public List<AdminDTO> getAllEmployees(){
         return adminService.getAllAdmins();
     }
 

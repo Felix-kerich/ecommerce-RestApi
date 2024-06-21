@@ -1,4 +1,4 @@
-package com.App.ecommerce.models;
+package com.App.ecommerce.Products;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -8,7 +8,7 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "product")
-public class Product {
+public class ProductModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -17,12 +17,12 @@ public class Product {
     private String price;
     private String description;
 
-    public Product() {
+    public ProductModel() {
     }
 
     
 
-    public Product(Long id, Long productId, String productName, String price, String description) {
+    public ProductModel(Long id, Long productId, String productName, String price, String description) {
         this.id = id;
         this.productId = productId;
         this.productName = productName;

@@ -1,4 +1,4 @@
-package com.App.ecommerce.models;
+package com.App.ecommerce.Payments;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -7,7 +7,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 @Entity
-public class Payment {
+public class PaymentModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -20,13 +20,13 @@ public class Payment {
 
 
 
-    public Payment() {
+    public PaymentModel() {
     }
 
   
 
   
-    public Payment(Long id, Long phoneNumber, String username, double amount, String product, Long productId) {
+    public PaymentModel(Long id, Long phoneNumber, String username, double amount, String product, Long productId) {
         this.id = id;
         this.phoneNumber = phoneNumber;
         this.username = username;
